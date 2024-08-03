@@ -31,8 +31,9 @@ Repository information is read from repos.json. A repository node has the follow
 - GoldenBranch - unused
 - Group - an integer used to group solutions contained with the same repository together
 - Remote - the name of the git remote
-
-Only public repositories are currently supported.
+- SourceUrl - the url of the remote git repository (ending in .git)
+- SourceUsernameEnvVar - the name of the machine environment variable containing the username required to access the remote git repository
+- SourcePasswordEnvVar - "the name of the machine environment variable containing the password / access token required to access the remote git repository
 
 While running a panel is created for each repository, displaying the name and current branch. For each repository the currently supported commands are:
 
@@ -42,6 +43,7 @@ While running a panel is created for each repository, displaying the name and cu
 - Build - run a `dotnet build` command
 - Fetch - run a `git fetch` command
 - Cmd - launch a command prompt with the working directory set to the repository solution directory
+- Clone - clone the remote repository
 
 A progress bar is displaying while the operation is on-going and a success/failure result is displayed (based on the operation exit code)
 

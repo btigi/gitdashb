@@ -5,13 +5,21 @@
       "GitDirectory": "D:\\source\\asciiz",
       "SlnDirectory": "D:\\source\\asciiz\\asciiz",
       "GoldenBranch": "main",
-      "Group": 1,
+      "Group": 0,
       "Remote": "origin"
     },
     {
       "Name": "bp",
       "GitDirectory": "D:\\source\\bp",
       "SlnDirectory": "D:\\source\\bp\\bp",
+      "GoldenBranch": "main",
+      "Group": 1,
+      "Remote": "origin"
+    },
+    {
+      "Name": "bpe",
+      "GitDirectory": "D:\\source\\bp",
+      "SlnDirectory": "D:\\source\\bp\\bp\\bpe",
       "GoldenBranch": "main",
       "Group": 1,
       "Remote": "origin"
@@ -31,6 +39,17 @@
       "GoldenBranch": "main",
       "Group": "0",
       "Remote": ""
-    }    
+    },
+    {
+      "Name": "preeminence",
+      "GitDirectory": "D:\\source\\tests\\preeminence2",
+      "SlnDirectory": "D:\\source\\tests\\preeminence2\\src",
+      "GoldenBranch": "main",
+      "Group": "0",
+      "Remote": "origin",
+      "SourceUrl": "https://github.com/btigi/preeminence.git",
+      "SourceUsernameEnvVar": "btigi_github_username",
+      "SourcePasswordEnvVar": "btigi_github_password"
+    }
   ]
 }
