@@ -163,6 +163,11 @@ namespace gitdashb
             btnClone.Click += (s, e) => { _ = Clone(repoInfo, panel, disablePanelByGroup, enablePanelByGroup); };
             btnClone.Top = btnFetch.Bottom + 10;
 
+            var btnRun = new Button();
+            btnRun.Text = "Run";
+            btnRun.Click += (s, e) => { _ = DotNetRun(repoInfo, panel, disablePanelByGroup, enablePanelByGroup); };
+            btnRun.Top = btnClone.Bottom + 10;
+
             var progressBar = new ProgressBar();
             progressBar.Value = 0;
             progressBar.Top = btnClone.Bottom;
@@ -191,6 +196,7 @@ namespace gitdashb
             flow.Controls.Add(btnFetch);
             flow.Controls.Add(btnCmdPrompt);
             flow.Controls.Add(btnClone);
+            flow.Controls.Add(btnRun);
             flow.Controls.Add(progressBar);
             flow.Controls.Add(lblOutcome);
             flow.BackColor = Color.White;
@@ -345,6 +351,30 @@ namespace gitdashb
             enableAction((int)panel.Tag, flowLayoutPanel, panel, resultText);
         }
 
+        async Task DotNetRun(RepoInfo repoInfo, Panel panel, DisablePanelDelegate disableAction, DisablePanelDelegate enableAction)
+        {
+            disableAction((int)panel.Tag, flowLayoutPanel, panel, "");
+
+            var exitCode = 0;
+            try
+            {
+                var startInfo = new ProcessStartInfo();
+                startInfo.FileName = "dotnet";
+                startInfo.Arguments = "run";
+                startInfo.WorkingDirectory = repoInfo.RunDirectory;
+                startInfo.WindowStyle = ProcessWindowStyle.Normal;
+
+                Process.Start(startInfo);
+            }
+            catch
+            {
+                exitCode = -1;
+            }
+            var resultText = exitCode == 0 ? "success" : $"failure ({exitCode})";
+            resultText = $"[{DateTime.Now:HH:mm:ss}] {resultText}";
+            enableAction((int)panel.Tag, flowLayoutPanel, panel, resultText);
+        }
+
         async Task CmdPrompt(RepoInfo repoInfo, Panel panel, DisablePanelDelegate disableAction, DisablePanelDelegate enableAction)
         {
             disableAction((int)panel.Tag, flowLayoutPanel, panel, "");
@@ -380,6 +410,7 @@ namespace gitdashb
         public string Name { get; set; } = "";
         public string GitDirectory { get; set; } = "";
         public string SlnDirectory { get; set; } = "";
+        public string RunDirectory { get; set; } = "";
         public string GoldenBranch { get; set; } = "";
         public string Remote { get; set; } = "";
         public string SourceUrl { get; set; } = "";

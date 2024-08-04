@@ -44,6 +44,7 @@ While running a panel is created for each repository, displaying the name and cu
 - Fetch - run a `git fetch` command
 - Cmd - launch a command prompt with the working directory set to the repository solution directory
 - Clone - clone the remote repository
+- Run - run a `dotnet run` command
 
 A progress bar is displaying while the operation is on-going and a success/failure result is displayed (based on the operation exit code)
 

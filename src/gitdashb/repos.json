@@ -4,6 +4,7 @@
       "Name": "asciiz",
       "GitDirectory": "D:\\source\\asciiz",
       "SlnDirectory": "D:\\source\\asciiz\\asciiz",
+      "RunDirectory": "D:\\source\\asciiz\\asciiz",
       "GoldenBranch": "main",
       "Group": 0,
       "Remote": "origin"
@@ -12,6 +13,7 @@
       "Name": "bp",
       "GitDirectory": "D:\\source\\bp",
       "SlnDirectory": "D:\\source\\bp\\bp",
+      "RunDirectory": "D:\\source\\bp\\bp\\bp",
       "GoldenBranch": "main",
       "Group": 1,
       "Remote": "origin"
@@ -19,7 +21,8 @@
     {
       "Name": "bpe",
       "GitDirectory": "D:\\source\\bp",
-      "SlnDirectory": "D:\\source\\bp\\bp\\bpe",
+      "SlnDirectory": "D:\\source\\bp\\bp\\",
+      "RunDirectory": "D:\\source\\bp\\bp\\bpe",
       "GoldenBranch": "main",
       "Group": 1,
       "Remote": "origin"
@@ -28,6 +31,7 @@
       "Name": "ContentSearch",
       "GitDirectory": "D:\\source\\ContentSearch",
       "SlnDirectory": "D:\\source\\ContentSearch\\src",
+      "RunDirectory": "D:\\source\\ContentSearch\\src",
       "GoldenBranch": "main",
       "Group": 0,
       "Remote": "origin"
@@ -36,6 +40,7 @@
       "Name": "NotARepo",
       "GitDirectory": "D:\\source\\tests\\bg.test",
       "SlnDirectory": "D:\\source\\tests\\bg.test\\src",
+      "RunDirectory": "D:\\source\\tests\\bg.test\\src",
       "GoldenBranch": "main",
       "Group": "0",
       "Remote": ""
@@ -44,6 +49,7 @@
       "Name": "preeminence",
       "GitDirectory": "D:\\source\\tests\\preeminence2",
       "SlnDirectory": "D:\\source\\tests\\preeminence2\\src",
+      "RunDirectory": "D:\\source\\tests\\preeminence\\src",
       "GoldenBranch": "main",
       "Group": "0",
       "Remote": "origin",
