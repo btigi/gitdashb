@@ -1,10 +1,4 @@
-﻿/*
-Surface the repoStatus stats (added, modified etc.)
-
-Pull
-*/
-
-using LibGit2Sharp;
+﻿using LibGit2Sharp;
 using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
 
@@ -26,6 +20,13 @@ namespace gitdashb
             this.Top = Convert.ToInt32(config["top"]);
             this.Width = Convert.ToInt32(config["width"]);
             this.Height = Convert.ToInt32(config["height"]);
+
+            LoadForm();
+        }
+
+        private void LoadForm()
+        {
+            flowLayoutPanel.Controls.Clear();
 
             var repos = new ConfigurationBuilder()
                 .AddJsonFile("repos.json")
@@ -402,6 +403,15 @@ namespace gitdashb
         {
             flowLayoutPanel.Width = this.Width;
             flowLayoutPanel.Height = this.Height;
+        }
+
+        private void MainForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.R)
+            {
+                LoadForm();
+                MessageBox.Show("Repos reloaded");
+            }
         }
     }
 

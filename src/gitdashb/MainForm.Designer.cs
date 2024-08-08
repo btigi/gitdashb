@@ -48,9 +48,11 @@
             ClientSize = new Size(800, 447);
             Controls.Add(flowLayoutPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "MainForm";
             StartPosition = FormStartPosition.Manual;
             Text = "GitDashB";
+            KeyDown += MainForm_KeyDown;
             Resize += MainForm_Resize;
             ResumeLayout(false);
         }
